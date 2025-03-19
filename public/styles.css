@@ -1,0 +1,198 @@
+:root {
+    --primary: #5e72e4;
+    --primary-hover: #4a5fd7;
+    --background: #121418;
+    --surface: #1a1d23;
+    --surface-hover: #242830;
+    --text-primary: #f8f9fa;
+    --text-secondary: #adb5bd;
+    --accent: #44d9e8;
+    --border: #2d3748;
+}
+
+body {
+    padding: 20px;
+    background-color: var(--background);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.container {
+    background-color: var(--surface);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 28px;
+    margin: 28px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: var(--text-primary);
+    font-size: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    transform: translateX(-50%);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+h1:hover::after {
+    width: 100px;
+}
+
+.centered-textarea {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 150px;
+    padding: 16px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    resize: none;
+    background-color: var(--surface);
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+.centered-textarea:focus {
+    border-color: var(--primary);
+    background-color: var(--surface-hover);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(94, 114, 228, 0.3);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border: none;
+    color: var(--text-primary);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    background-color: var(--surface);
+    border-bottom: 2px solid var(--border);
+    padding: 14px 28px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.footer {
+    background-color: var(--surface);
+    padding: 14px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.footer p {
+    margin: 0;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.form-check {
+    display: flex;
+    margin-top: 16px;
+    padding: 18px;
+    align-items: center;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--surface);
+    transition: all 0.25s ease;
+}
+
+.form-check:hover {
+    background-color: var(--surface-hover);
+    border-color: var(--border);
+    transform: translateX(2px);
+}
+
+#inputOfPrefix, #inputOfAdmin {
+    padding: 16px;
+    width: 100%;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--surface);
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+#inputOfPrefix:focus, #inputOfAdmin:focus {
+    border-color: var(--primary);
+    background-color: var(--surface-hover);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(94, 114, 228, 0.3);
+}
+
+.disable {
+    display: none;
+}
+
+.enable {
+    display: block;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
