@@ -26,7 +26,7 @@ module.exports.run = async function({ api, event }) {
     }
 
     const imageUrl = attachment.url;
-    const apiUrl = `https://kaiz-apis.gleeze.com/api/upscale?imageUrl=${encodeURIComponent(imageUrl)}`;
+    const apiUrl = `https://rapido.up.railway.app/api/upscale-v3?imageUrl=${encodeURIComponent(imageUrl)}`;
 
     api.sendMessage('Enhancing the image... Please wait.', event.threadID, event.messageID);
 
@@ -37,7 +37,7 @@ module.exports.run = async function({ api, event }) {
             return api.sendMessage('The enhancement API failed to process the image. Please try again later.', event.threadID, event.messageID);
         }
 
-        const enhancedImageUrl = response.data.response;
+        const enhancedImageUrl = response.data.url;
 
         // Download the enhanced image to a temporary file
         const tempPath = path.join(__dirname, 'cache', `remini_${Date.now()}.jpg`);

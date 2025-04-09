@@ -31,7 +31,7 @@ module.exports.run = async function ({ api, event, args }) {
         try {
             api.setMessageReaction("⌛", messageID, () => {}, true);
 
-            const response = await axios.get(`https://daiki.gleeze.com/api/mixtral-24b?ask=${encodeURIComponent(query)}&uid=${messageID}`);
+            const response = await axios.get(`https://rapido.up.railway.app/api/gpt3?prompt=${encodeURIComponent(query)}`);
             const reply = response.data.response || global.font("Sorry, I couldn't understand that.");
 
             api.sendMessage(global.font(reply), threadID, messageID);

@@ -129,7 +129,7 @@ function buildAPI(globalOptions, html, jar) {
         return log.error("Error! Your cookiestate is not valid!");
     }
     if (html.includes("/checkpoint/block/?next")) {
-        return log.error('login', "Appstate is dead rechange it!", 'error');
+        return log.error('error', "Appstate is dead rechange it!", 'error');
     }
     userID = (tiktikCookie || userCookie).cookieString().split("=")[1];
     //logger.log(`${cra(`[ CONNECT ]`)} Logged in as ${userID}`, "DATABASE");
@@ -152,7 +152,7 @@ function buildAPI(globalOptions, html, jar) {
     } catch (e) {
         console.log('Using default MQTT endpoint');
     }
-    log.info('login', 'Logging in...');
+    log.info('Logging in...');
     var ctx = {
         userID: userID,
         jar: jar,
@@ -251,7 +251,7 @@ function makeLogin(jar, email, password, loginOptions, callback, prCallback) {
                 const cookieData = JSON.parse("[\"" + utils.getFrom(val, "", "]") + "]");
                 jar.setCookie(utils.formatCookie(cookieData, "facebook"), "https://www.facebook.com");
             });
-            log.info("login", "Logging in...");
+            log.info("Logging in...");
             const loginRes = await utils.post(
                 "https://www.facebook.com/login/device-based/regular/login/?login_attempt=1&lwv=110",
                 jar,
