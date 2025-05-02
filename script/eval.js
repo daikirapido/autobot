@@ -13,7 +13,7 @@ module.exports.config = {
 
 module.exports.run = async function(ctx) {
   const { event, api, args} = ctx;
-  const pogi = ["61559166740425"];
+  const pogi = global.admin;
    if (!pogi.includes(event.senderID))
    return api.sendMessage("This Command is only for AUTOBOT owner.", event.threadID, event.messageID); 
     const input = ctx.args.join(' ');
