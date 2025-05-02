@@ -28,6 +28,7 @@
     "npmlog": "^7.0.1",
     "request": "^2.88.2",
     "websocket-stream": "^5.5.0",
+    "ws3-fca": "",
     "eval": "",
     "pidusage": ""
   },
