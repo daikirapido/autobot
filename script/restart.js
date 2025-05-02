@@ -22,6 +22,9 @@ module.exports.handleEvent = async function ({ api, admin }) {
 };
 
 module.exports.run = async function ({ api, event }) {
+  if (!global.admin || !global.admin.includes(event.senderID)) {
+    return api.sendMessage("Only Autobot owner can use this command.", event.threadID, event.messageID);
+  }
   const pathFile = `${__dirname}/../cache/restart.txt`;
   fs.writeFileSync(pathFile, `${event.threadID} ${Date.now()}`);
   await api.sendMessage("🔴🟢🟡 Bot is now restarting...", event.threadID);
